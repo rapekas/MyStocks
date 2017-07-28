@@ -1,4 +1,3 @@
-.gradle
 .studio
 *.ipr
 *.iml
@@ -8,3 +7,4 @@ deploy/*
 modules/*/build/*
 out
 test-run
+.gradle/
