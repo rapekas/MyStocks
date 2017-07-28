@@ -8,7 +8,7 @@
       maxIdle="2"
       maxWaitMillis="5000"
       driverClassName="org.postgresql.Driver"
-      url="jdbc:postgresql://ec2-79-125-125-97.eu-west-1.compute.amazonaws.com:5432/dfsouh6hskrncc?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"
+      url="jdbc:postgresql://ec2-79-125-125-97.eu-west-1.compute.amazonaws.com:5432/dfsouh6hskrncc"
       username="dfsouh6hskrncc"
       password="rhlpkyhwermkwg"/>
 
