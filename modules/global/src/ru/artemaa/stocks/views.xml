@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="ru.artemaa.stocks.entity.Stock"
+          extends="_local"
+          name="stock-edit-view">
+        <property fetch="AUTO"
+                  name="currency"
+                  view="_local"/>
+    </view>
+    <view class="ru.artemaa.stocks.entity.Operation"
+          extends="_local"
+          name="operation-with-stock-view">
+        <property name="stock"
+                  view="_minimal"/>
+    </view>
+</views>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="ru.artemaa.stocks.web.stocksummary.StockSummaryBrowse"
+        focusComponent="stockSummariesTable"
+        lookupComponent="stockSummariesTable"
+        messagesPack="ru.artemaa.stocks.web.stocksummary">
+    <dsContext>
+        <collectionDatasource id="stockSummariesDs"
+                              class="ru.artemaa.stocks.entity.StockSummary"
+                              datasourceClass="ru.artemaa.stocks.web.stocksummary.StockSummaryDatasource">
+            <query>
+                <![CDATA[select e from stocks$StockSummary e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="stockSummariesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="stockSummariesTable"
+                datasource="stockSummariesDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="stockSummariesTable"
+               width="100%">
+            <actions>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="stock"/>
+                <column id="amount"/>
+                <column id="totalPrice"/>
+                <column id="avgPrice"/>
+                <column id="totalDividends"/>
+                <column id="avgDividends"/>
+                <column id="priceDividendsRatio"/>
+            </columns>
+            <rows datasource="stockSummariesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="refreshButton"
+                        action="stockSummariesTable.refresh"
+                        icon="icons/refresh.png"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

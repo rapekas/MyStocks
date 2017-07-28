@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="ru.artemaa.stocks.web.operation.OperationEdit"
+        datasource="operationDs"
+        focusComponent="fieldGroup"
+        messagesPack="ru.artemaa.stocks.web.operation">
+    <dsContext>
+        <datasource id="operationDs"
+                    class="ru.artemaa.stocks.entity.Operation"
+                    view="operation-with-stock-view"/>
+        <collectionDatasource id="stocksDs"
+                              class="ru.artemaa.stocks.entity.Stock"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from stocks$Stock e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                modal="true"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="operationDs">
+            <column width="250px">
+                <field optionsDatasource="stocksDs"
+                       property="stock"/>
+                <field property="type"/>
+                <field property="date"/>
+                <field property="price"/>
+                <field property="amount"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

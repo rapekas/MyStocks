@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="ru.artemaa.stocks.web.operation.OperationBrowse"
+        focusComponent="operationsTable"
+        lookupComponent="operationsTable"
+        messagesPack="ru.artemaa.stocks.web.operation">
+    <dsContext>
+        <collectionDatasource id="operationsDs"
+                              class="ru.artemaa.stocks.entity.Operation"
+                              view="operation-with-stock-view">
+            <query>
+                <![CDATA[select e from stocks$Operation e where e.createdBy = :session$userLogin]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="operationsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="operationsTable"
+                datasource="operationsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="operationsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="stock"/>
+                <column id="type"/>
+                <column id="date"/>
+                <column id="price"/>
+                <column id="amount"/>
+            </columns>
+            <rows datasource="operationsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="operationsTable.create"/>
+                <button id="editBtn"
+                        action="operationsTable.edit"/>
+                <button id="removeBtn"
+                        action="operationsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

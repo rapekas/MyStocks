@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<metadata xmlns="http://schemas.haulmont.com/cuba/metadata.xsd">
+    <metadata-model namespace="stocks"
+                    root-package="ru.artemaa.stocks">
+        <class>ru.artemaa.stocks.entity.StockSummary</class>
+    </metadata-model>
+</metadata>

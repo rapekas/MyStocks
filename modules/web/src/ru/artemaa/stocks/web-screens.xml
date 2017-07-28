@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="ru/artemaa/stocks/screens.xml"/>
+    <screen id="stocks$Currency.browse"
+            template="ru/artemaa/stocks/web/currency/currency-browse.xml"/>
+    <screen id="stocks$Stock.browse"
+            template="ru/artemaa/stocks/web/stock/stock-browse.xml"/>
+    <screen id="stocks$Operation.browse"
+            template="ru/artemaa/stocks/web/operation/operation-browse.xml"/>
+    <screen id="stocks$Operation.edit"
+            template="ru/artemaa/stocks/web/operation/operation-edit.xml"/>
+    <screen id="stocks$StockSummary.browse"
+            template="ru/artemaa/stocks/web/stocksummary/stock-summary-browse.xml"/>
+</screen-config>

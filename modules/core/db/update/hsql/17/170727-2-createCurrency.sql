@@ -1,0 +1,1 @@
+create unique index IDX_STOCKS_CURRENCY_UNIQ_CODE on STOCKS_CURRENCY (CODE) ;
