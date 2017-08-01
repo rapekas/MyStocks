@@ -208,6 +208,8 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
 }
 
+apply from: 'extra.gradle'
+
 task stage(dependsOn: ['setupTomcat', ':app-core:deploy', ':app-web:deploy']) {
     doLast {
         // replace context.xml with heroku-context.xml
@@ -243,4 +245,3 @@ task stage(dependsOn: ['setupTomcat', ':app-core:deploy', ':app-web:deploy']) {
     }
 }
 
-apply from: 'extra.gradle'
